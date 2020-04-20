@@ -1,0 +1,2 @@
+*.py linguist-language=python
+CHANGELOG.md export-ignore
