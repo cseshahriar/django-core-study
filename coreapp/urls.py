@@ -20,5 +20,8 @@ from blog.views import post_list_view
 urlpatterns = [
     path('', post_list_view, name='home'),
     path('posts/', include('blog.urls')),
+    path('', include('cbv.urls')),
+    path('', include('dashboard.urls')),
+    path('book/', include('books.urls')),
     path('admin/', admin.site.urls),
 ]

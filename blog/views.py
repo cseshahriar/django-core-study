@@ -5,6 +5,7 @@ from .forms import PostModelForm
 from django.db.models import Q
 from .models import Post
 
+
 '''
 # login require
 # @login_required(login_url='/login')
@@ -41,7 +42,7 @@ def single_post(request, slug=None):
     template = 'posts/single.html'
     return render(request, template, context)
 
-# @login_required
+#@login_required
 def post_create_view(request):
     form = PostModelForm(request.POST or None)
     context = {'form': form}

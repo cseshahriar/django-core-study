@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>{{ object.title }}</h1>
+            <p>{{ object.description }}</p>
+            <p>Published: {{ object.created_at|date }}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <hr>
+            {% include "books/form.html" with form=form title="Create New Book" btn_title="Add New" %}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
