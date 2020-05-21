@@ -1,0 +1,20 @@
+{% extends "base.html" %} <!-- template inhetitence -->
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+      <!-- {% include "temp/temp.html" with obj=products %} -->
+        <h2>Django Template</h2>
+        <hr>
+        {% for post in posts %}
+
+        <h3>{{ post.title|title }} ({{ forloop.counter }})</h3> <!-- temp filter -->
+        <p>{{ post.content }}</p>
+        <p>Publish : {{ post.created_at|date:'d M Y h:i:s a'}}</p>
+        <hr>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock content %}

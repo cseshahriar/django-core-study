@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'books',
     'forms',
     'products',
+    'temp',  
 
     # packages
     'widget_tweaks',
