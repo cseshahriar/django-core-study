@@ -37,12 +37,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog',
-    'products',
+    'django.contrib.sites',
+
+    # custom apps
     'books',
+    'forms',
+    'products',
+
+    # packages
     'widget_tweaks',
     'crispy_forms',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

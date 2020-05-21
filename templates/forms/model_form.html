@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% load widget_tweaks %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-2">
+        <h2>Model Form</h2>
+        <form action="" method="POST">
+
+            {{ form.non_field_errors }}
+
+
+            {% for field in form %}
+              {{ field.errors|striptags }}   
+            {% endfor %}
+
+            {% if form.errors %}
+              {% for key, value in form.errors.itervalues %}
+                <p>{{ key }} : {{ value.as_text }}</p>
+              {% endfor %}      
+            {% endif %}    
+
+            {% csrf_token %}
+
+            <!-- manualy render form -->
+
+            <div class="form-group">
+              <label for="{{ form.title.id_for_label }}">Title</label>
+              {{ form.title|add_class:"form-control" }} 
+              
+              {% if form.title.errors %}
+              <div class="text-danger list-unstyled"> 
+                {{ form.title.errors }}
+              </div>
+              {% endif %} 
+             
+            </div>  
+            
+              <div class="form-group">
+                <label for="{{ form.content.id_for_label }}">Content</label>
+                {{ form.content|add_class:"form-control"|attr:"rows:5"|attr:"cols:5" }}
+                
+                {% if form.contact.errors %}
+                  <ol>
+                    {% for error in form.contact.errors %}
+                      <li><strong>{{ error|escape }}</strong></li>
+                    {% endfor %}
+                  </ol>
+                {% endif %}
+              </div>
+
+            <button class="btn btn-primary" type="submit">Submit</button> 
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
