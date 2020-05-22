@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 
+from django.utils.translation import gettext_lazy as _
+# from django.utils.translation import ugettext_lazy as _
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -44,18 +47,22 @@ INSTALLED_APPS = [
     'forms',
     'products',
     'temp',  
+    'translation',
 
     # packages
     'widget_tweaks',
-    'crispy_forms',
+    'crispy_forms', 
 ]
 
 SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware', 
     'django.middleware.common.CommonMiddleware',
+
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -74,7 +81,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+                'django.contrib.messages.context_processors.messages',  
             ],
         },
     },
@@ -116,20 +123,37 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+TIME_ZONE = 'Asia/Dhaka' 
 
-TIME_ZONE = 'UTC'
-
-USE_I18N = True
+USE_I18N = True # must true  
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = True 
 
+
+# Tell Django where the project's translation files should be.
+LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale'), ]    
+
+# Provide a lists of languages which your site supports.
+LANGUAGES = [
+    ('en', _('English')), 
+    ('bn', _('Bangla')), 
+]
+
+# Set the default language for your site
+LANGUAGE_CODE = 'bn'      
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+# static 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"),]
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')  
+
+# media url
+MEDIA_URL = '/media/' 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

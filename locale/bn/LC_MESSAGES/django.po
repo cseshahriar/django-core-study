@@ -1,0 +1,43 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-22 15:58+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: coreapp/settings.py:140
+msgid "English"
+msgstr ""
+
+#: coreapp/settings.py:141
+msgid "Bangla"
+msgstr ""
+
+#: templates/trans/trans.html:35
+msgid "Title"
+msgstr "শিরোনাম"
+
+#: templates/trans/trans.html:36
+msgid ""
+"Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque officia "
+"optio enim, blanditiis labore consequatur sint illo delectus autem repellat "
+"molestias, quod molestiae ipsum exercitationem? Fuga ipsam harum suscipit "
+"fugiat?"
+msgstr ""
+
+#: translation/views.py:19
+msgid "Translation"
+msgstr "অনুবাদ"  
