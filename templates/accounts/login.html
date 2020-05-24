@@ -1,0 +1,62 @@
+{% extends "accounts/base.html" %} 
+
+{% load widget_tweaks %} 
+
+{% block title %}
+Login page
+{% endblock title %}
+
+{% block content %} 
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-3">
+        <h2>Login</h2>
+        <form action="" method="POST"> 
+
+            {{ form.non_field_errors }}
+
+            {% for field in form %}
+              {{ field.errors|striptags }}   
+            {% endfor %}
+
+            {% if form.errors %}
+              {% for key, value in form.errors.itervalues %}
+                <p>{{ key }} : {{ value.as_text }}</p>
+              {% endfor %}      
+            {% endif %}    
+
+            {% csrf_token %} 
+
+            <!-- manualy render form -->
+ 
+            <div class="form-group">
+              <label for="{{ form.query.id_for_label }}">Username / Email</label>
+              {{ form.query|add_class:"form-control" }} 
+              
+              {% if form.query.errors %}
+                <div class="text-danger list-unstyled">  
+                    {{ form.query.errors }}  
+                </div>
+              {% endif %}  
+             
+            </div>  
+
+           
+            <div class="form-group">
+              <label for="{{ form.password1.id_for_label }}">Password</label>
+              {{ form.password|add_class:"form-control" }} 
+              
+              {% if form.password.errors %}
+                <div class="text-danger list-unstyled"> 
+                    {{ form.password.errors }}
+                </div>
+              {% endif %}  
+            </div>  
+          
+
+            <button class="btn btn-primary" type="submit">Login</button>   
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

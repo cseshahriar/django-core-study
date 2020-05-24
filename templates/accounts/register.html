@@ -1,0 +1,86 @@
+{% extends "accounts/base.html" %}
+
+{% load widget_tweaks %}
+
+
+{% block title %}
+Registr page 
+{% endblock title %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-2">
+        <h2>Model Form</h2>
+        <form action="" method="POST"> 
+
+            {{ form.non_field_errors }}
+
+            {% for field in form %}
+              {{ field.errors|striptags }}   
+            {% endfor %}
+
+            {% if form.errors %}
+              {% for key, value in form.errors.itervalues %}
+                <p>{{ key }} : {{ value.as_text }}</p>
+              {% endfor %}      
+            {% endif %}    
+
+            {% csrf_token %}
+
+            <!-- manualy render form -->
+ 
+            <div class="form-group">
+              <label for="{{ form.username.id_for_label }}">Username</label>
+              {{ form.username|add_class:"form-control" }} 
+              
+              {% if form.username.errors %}
+                <div class="text-danger list-unstyled">  
+                    {{ form.username.errors }}
+                </div>
+              {% endif %}  
+             
+            </div>  
+
+            <div class="form-group">
+              <label for="{{ form.email.id_for_label }}">Email</label>
+              {{ form.email|add_class:"form-control" }} 
+              
+              {% if form.email.errors %}
+                <div class="text-danger list-unstyled"> 
+                    {{ form.email.errors }}
+                </div>
+              {% endif %}  
+            </div>  
+            
+
+            <div class="form-group">
+              <label for="{{ form.password1.id_for_label }}">Password</label>
+              {{ form.password1|add_class:"form-control" }} 
+              
+              {% if form.password1.errors %}
+                <div class="text-danger list-unstyled"> 
+                    {{ form.password1.errors }}
+                </div>
+              {% endif %}  
+            </div>  
+            
+
+            <div class="form-group">
+              <label for="{{ form.password2.id_for_label }}">Password Confirmation</label>
+              {{ form.password2|add_class:"form-control" }} 
+              
+              {% if form.password2.errors %}
+                <div class="text-danger list-unstyled"> 
+                    {{ form.password2.errors }} 
+                </div>
+              {% endif %}  
+            </div>  
+         
+
+            <button class="btn btn-primary" type="submit">Register</button>  
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

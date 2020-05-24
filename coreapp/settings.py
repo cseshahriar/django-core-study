@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+INSTALLED_APPS = [ 
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,11 +48,15 @@ INSTALLED_APPS = [
     'products',
     'temp',  
     'translation',
+    'accounts',    
 
     # packages
     'widget_tweaks',
     'crispy_forms', 
 ]
+
+# custom authentication
+AUTH_USER_MODEL = 'accounts.MyUser'   
 
 SITE_ID = 1
 
@@ -157,3 +161,6 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# Email 
+

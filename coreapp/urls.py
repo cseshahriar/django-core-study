@@ -11,7 +11,8 @@ urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
     path('admin/', admin.site.urls),
     path('form/', include('forms.urls')),
-    path('template/', include('temp.urls')),  
+    path('account/', include('accounts.urls')), 
+    path('template/', include('temp.urls')),   
 ] 
 
 urlpatterns += i18n_patterns(
