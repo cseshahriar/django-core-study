@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'temp',  
     'translation',
     'accounts',    
-    'category',  
+    'category',   
 
     # packages
     'widget_tweaks',

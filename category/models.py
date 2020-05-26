@@ -3,7 +3,7 @@ from mptt.models import MPTTModel, TreeForeignKey
 
 from django.db.models.signals import pre_save  # Signals
 # import the unique_slug_generator from .utils.py
-from .utils import unique_slug_generator
+from .utils import unique_slug_generator 
 
 
 class Category(MPTTModel):
