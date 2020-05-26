@@ -13,6 +13,7 @@ urlpatterns = [
     path('form/', include('forms.urls')),
     path('account/', include('accounts.urls')), 
     path('template/', include('temp.urls')),   
+    path('', include('category.urls')),   
 ] 
 
 urlpatterns += i18n_patterns(

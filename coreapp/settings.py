@@ -49,10 +49,12 @@ INSTALLED_APPS = [
     'temp',  
     'translation',
     'accounts',    
+    'category',  
 
     # packages
     'widget_tweaks',
     'crispy_forms', 
+    'mptt',
 ]
 
 # custom authentication

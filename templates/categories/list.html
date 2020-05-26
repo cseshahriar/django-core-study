@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load widget_tweaks %}
+
+{% load mptt_tags %}
+
+{% block title %}
+Home page
+{% endblock title %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-2">
+        <h2>Categories</h2> 
+
+            <ul>
+                {% recursetree categories %}
+                    <li>
+                        {{ node.name }}
+                        {% if not node.is_leaf_node %}
+                            <ul class="children">
+                                {{ children }}
+                            </ul>
+                        {% endif %}
+                    </li>
+                {% endrecursetree %}
+            </ul>
+
+      </div>
+    </div>
+  </div>
+{% endblock content %} 
