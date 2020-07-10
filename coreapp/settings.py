@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [ 
+INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -46,19 +46,24 @@ INSTALLED_APPS = [
     'books',
     'forms',
     'products',
-    'temp',  
+    'temp',
     'translation',
-    'accounts',    
-    'category',   
+    'accounts',
+    'category',
+    'djfk',
+    'blogpost',
+    'markdown_deux',
+    'formset',
 
     # packages
     'widget_tweaks',
-    'crispy_forms', 
+    'crispy_forms',
     'mptt',
+    'pagedown',
 ]
 
 # custom authentication
-AUTH_USER_MODEL = 'accounts.MyUser'   
+AUTH_USER_MODEL = 'accounts.MyUser'
 
 SITE_ID = 1
 
@@ -66,7 +71,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
 
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.locale.LocaleMiddleware', 
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
 
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -87,7 +92,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',  
+                'django.contrib.messages.context_processors.messages',
             ],
         },
     },
@@ -129,40 +134,40 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-TIME_ZONE = 'Asia/Dhaka' 
+TIME_ZONE = 'Asia/Dhaka'
 
-USE_I18N = True # must true  
+USE_I18N = True # must true
 
 USE_L10N = True
 
-USE_TZ = True 
+USE_TZ = True
 
 
 # Tell Django where the project's translation files should be.
-LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale'), ]    
+LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale'), ]
 
 # Provide a lists of languages which your site supports.
 LANGUAGES = [
-    ('en', _('English')), 
-    ('bn', _('Bangla')), 
+    ('en', _('English')),
+    ('bn', _('Bangla')),
 ]
 
 # Set the default language for your site
-LANGUAGE_CODE = 'bn'      
+LANGUAGE_CODE = 'bn'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-# static 
+# static
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"),]
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')  
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # media url
-MEDIA_URL = '/media/' 
+MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-# Email 
+# Email
 
