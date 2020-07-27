@@ -15,8 +15,11 @@ urlpatterns = [
     path('template/', include('temp.urls')),
     path('', include('category.urls')),
     path('', include('djfk.urls')),
+    path('', include('multiformset.urls')),
 ]
 
 urlpatterns += i18n_patterns(
     path('', include('translation.urls')),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
